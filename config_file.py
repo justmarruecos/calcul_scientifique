@@ -1,2 +1,2 @@
-Height = 15
-Length = 10
+LENGTH = 15
+HEIGHT = 5
