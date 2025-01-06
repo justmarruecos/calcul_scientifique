@@ -15,7 +15,7 @@ def load_real_data(file_path):
 
 
 #Simulation de Lotka-Volterra
-def simulate_lotka_volterra(alpha, beta, gamma, delta, step=0.001, number_iterations=100_000):
+def simulate_lotka_volterra(alpha, beta, gamma, delta, step=0.001, number_iterations=300_000):
     time = [0]
     lapin = [1]
     renard = [2]
@@ -41,7 +41,7 @@ def calculate_mse(simulated_lapins, simulated_renards, real_lapins, real_renards
 
 
 #Optimisation des paramètres
-def optimize_parameters(real_time, real_lapins, real_renards, param_grid, step=0.001, number_iterations=100_000):
+def optimize_parameters(real_time, real_lapins, real_renards, param_grid, step=0.001, number_iterations=300_000):
     best_params = None
     lowest_error = float('inf')
 
