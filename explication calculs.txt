@@ -1,0 +1,32 @@
+Système de cauchy 
+f' - f = 0
+f(0) = 1
+
+
+X = [0, 0.001, 0.002, ..., 3]
+step = 0.001
+
+
+Etape 1 : on écrit la formulation discrète de la dérivée
+f'(X[i]) = (f(X[i+1]) - f(X[i])) / step
+
+Etape 2 : on injecte la formulation discrète de la dérivée dans l'équation
+f'(X[i]) - f(X[i]) = 0
+((f(X[i+1]) - f(X[i])) / step) - f(X[i]) = 0
+
+Etape 3 : on isole f(X[i+1])
+(f(X[i+1]) - f(X[i])) / step  - f(X[i]) = 0
+(f(X[i+1]) - f(X[i])) / step = f(X[i])
+-----------------------------------------------
+f(X[0]) = 1
+f(X[i+1]) = f(X[i]) * step + f(X[i])
+F[i+1] = F[i] * step + F[i]
+-------------------------------------------------
+step = 0.001
+X = numpy.arange(0, 3, step)
+F = [f(X[0])] = [1]
+number_points_to_compute = len(X) - 1
+
+for index in range(0, number_points_to_compute):
+	next_value = F[index] * step + F[index]
+	F.append(next_value)
